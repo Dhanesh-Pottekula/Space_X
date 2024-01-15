@@ -112,14 +112,14 @@ export default function Page() {
           ) {
             // console.log(Past,upcoming)
             if (upcoming === launch.upcoming){
-            return <CardComponent launch={launch}></CardComponent>;
+            return <CardComponent key={launch.launch_date_unix} launch={launch}></CardComponent>;
             }
             if(Past!==launch.upcoming){
-            return <CardComponent launch={launch}></CardComponent>;
+            return <CardComponent key={launch.launch_date_unix} launch={launch}></CardComponent>;
             }
             if(!Past && !upcoming){
               console.log("sdasfasfsafasdfsafasfasdsa")
-            return <CardComponent launch={launch}></CardComponent>;
+            return <CardComponent key={launch.launch_date_unix} launch={launch}></CardComponent>;
             }
           } else {
             return;
