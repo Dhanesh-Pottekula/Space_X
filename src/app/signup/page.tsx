@@ -5,6 +5,7 @@ import {useRouter} from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
+import { Button, Card, Heading } from "@chakra-ui/react";
 
 
 
@@ -44,10 +45,10 @@ export default function SignupPage() {
 
 
     return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1>{loading ? "Processing" : "Signup"}</h1>
-        <hr />
-        <label htmlFor="username">username</label>
+        <div className="flex flex-col items-center justify-center min-h-screen py-2 p-2 bg-slate-300 ">
+        <Heading className=" pb-16"> SignUp</Heading>
+        
+        <Card maxW="md" className=" w-1/4     flex flex-col justify-center items-center p-8 pt-20 pb-10">
         <input 
         className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="username"
@@ -56,7 +57,7 @@ export default function SignupPage() {
             onChange={(e) => setUser({...user, username: e.target.value})}
             placeholder="username"
             />
-        <label htmlFor="email">email</label>
+       
         <input 
         className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="email"
@@ -65,7 +66,7 @@ export default function SignupPage() {
             onChange={(e) => setUser({...user, email: e.target.value})}
             placeholder="email"
             />
-        <label htmlFor="password">password</label>
+       
         <input 
         className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="password"
@@ -74,10 +75,12 @@ export default function SignupPage() {
             onChange={(e) => setUser({...user, password: e.target.value})}
             placeholder="password"
             />
-            <button
+            <Button
             onClick={onSignup}
-            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">{buttonDisabled ? "No signup" : "Signup"}</button>
+            isLoading={loading}
+            className="p-2 bg-sky-500 rounded-lg mb-4 focus:outline-none focus:border-gray-600">{buttonDisabled ? "No signup" : "Signup"}</Button>
             <Link href="/login">Visit login page</Link>
+            </Card>
         </div>
     )
 

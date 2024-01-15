@@ -23,7 +23,6 @@ export const counterSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.launches=action.payload
-      console.log(action.payload)
     //   console.log(typeof(action.payload))
     },
    
@@ -36,9 +35,6 @@ export const counterSlice = createSlice({
 
         })
         
-        .addCase(getlaunches.rejected,(state,action)=>{
-            
-        })
     }
 })
 export const getlaunches=createAsyncThunk("counter",async ()=>{
