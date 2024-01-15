@@ -1,11 +1,5 @@
 import React from "react";
-import { Checkbox, CheckboxGroup, Stack } from "@chakra-ui/react";
-import {
-  RangeSlider,
-  RangeSliderTrack,
-  RangeSliderFilledTrack,
-  RangeSliderThumb,
-} from "@chakra-ui/react";
+
 import {
   Avatar,
   Box,
@@ -27,7 +21,7 @@ function CardComponent({ launch }: any) {
     
               <Avatar flex="1"
                 name="Segun Adebayo"
-                src={launch.links.mission_patch_small}
+                src={launch.links?.mission_patch_small}
               />
               <Heading  flex="1" size="xs">
                 {launch.rocket.rocket_name}
@@ -68,7 +62,7 @@ function CardComponent({ launch }: any) {
       <Image
         objectFit="scale-down"
         maxH={"md"}
-        src={launch.links.flickr_images[0] || launch.links.mission_patch}
+        src={launch.links?.flickr_images[0] || launch.links?.mission_patch}
         alt="Chakra UI"
       />
 
