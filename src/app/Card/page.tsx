@@ -20,7 +20,7 @@ import {
 import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
 function CardComponent({ launch }: any) {
   return (
-    <Card maxW="md">
+    <Card maxW="md" key={launch.launch_date_unix}>
       <CardHeader>
         <Flex className=" flex flex-col">
           <Flex flex="1" gap="4" alignItems="center" flexDirection={'row'} flexWrap="wrap" justifyContent={"space-between"} pb={'4'}>
