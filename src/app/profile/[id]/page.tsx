@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
+
 import { useDispatch, useSelector } from "react-redux";
 import { increment } from "@/redux/slices/launchesSlice";
 import type { RootState } from "../../../redux/store";
@@ -16,17 +17,14 @@ import {
   Avatar,
   Box,
   Button,
-  Flex,
-  Heading,
-  IconButton,
-  Image,
+
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
+
 import CardComponent from "@/app/Card/page";
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
   const launchInfo = useSelector((state: RootState) => state.counter.launches);
   const dispatch = useDispatch();
