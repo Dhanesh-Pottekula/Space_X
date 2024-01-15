@@ -14,7 +14,7 @@ import {
 import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
 function CardComponent({ launch }: any) {
   return (
-    <Card maxW="md" key={launch.launch_date_unix}>
+    <Card maxW="md" key={launch?.launch_date_unix}>
       <CardHeader>
         <Flex className=" flex flex-col">
           <Flex flex="1" gap="4" alignItems="center" flexDirection={'row'} flexWrap="wrap" justifyContent={"space-between"} pb={'4'}>
@@ -24,10 +24,10 @@ function CardComponent({ launch }: any) {
                 src={launch?.links?.mission_patch_small}
               />
               <Heading  flex="1" size="xs">
-                {launch.rocket.rocket_name}
+                {launch.rocket?.rocket_name}
               </Heading>
               <Heading flex="1" size="xs" overflow={'hidden'}>
-                {launch.rocket.rocket_type}
+                {launch.rocket?.rocket_type}
               </Heading>
               <div>
                {!launch.upcoming && (launch.launch_success ? (
@@ -42,7 +42,7 @@ function CardComponent({ launch }: any) {
           <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap" justifyContent={"space-between"}>
             <Text size={"sm"} className=" font-bold text-sm pb-0 ">
               {" "}
-              flight No:{launch.flight_number}
+              flight No:{launch?.flight_number}
             </Text>
             <Box>
               <Text className=" font-bold text-sm pb-0 ">
