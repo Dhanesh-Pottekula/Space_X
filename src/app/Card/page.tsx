@@ -47,7 +47,7 @@ function CardComponent({ launch }: any) {
             <Box>
               <Text className=" font-bold text-sm pb-0 ">
                 {new Date(launch?.launch_date_local).toLocaleDateString()} At -
-                {launch?.launch_site.site_name}
+                {launch?.launch_site?.site_name}
               </Text>
               
             </Box>
@@ -56,7 +56,7 @@ function CardComponent({ launch }: any) {
       </CardHeader>
       <CardBody>
         <Text maxH={"100px"} overflow={"auto"}>
-          {launch && launch.details}
+          {launch && launch?.details}
         </Text>
       </CardBody>
       <Image
@@ -76,14 +76,14 @@ function CardComponent({ launch }: any) {
         }}
       >
         <Box className="flex justify-center items-center">
-          {launch && launch.launch_success ? (
+          {launch && launch?.launch_success ? (
             <Text color={"green"} fontSize={"bold"}>
               Success
             </Text>
           ) : (
             <Text color={"red"} fontSize={"bold"}>
               {" "}
-              Failure: {launch.launch_failure_details?.reason}
+              Failure: {launch?.launch_failure_details?.reason}
             </Text>
           )}
         </Box>
