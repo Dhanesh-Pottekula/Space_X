@@ -46,8 +46,8 @@ function CardComponent({ launch }: any) {
             </Text>
             <Box>
               <Text className=" font-bold text-sm pb-0 ">
-                {new Date(launch.launch_date_local).toLocaleDateString()} At -
-                {launch.launch_site.site_name}
+                {new Date(launch?.launch_date_local).toLocaleDateString()} At -
+                {launch?.launch_site.site_name}
               </Text>
               
             </Box>
