@@ -30,7 +30,7 @@ function CardComponent({ launch }: any) {
                 {launch && launch.rocket?.rocket_type}
               </Heading>
               <div>
-               {!launch.upcoming && (launch.launch_success ? (
+               {!launch?.upcoming && (launch?.launch_success ? (
                   <div className=" rounded-full bg-green-300 h-6 w-6 flex justify-center items-center">
                     <div className=" rounded-full bg-green-500 h-4 w-4"></div>{" "}
                   </div>
